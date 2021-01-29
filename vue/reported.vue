@@ -12,8 +12,14 @@
     data() {
       return {
         fields: [
-          'Country',
-          'Total',
+          {
+            key: 'Country',
+            sortable: true
+          },
+          {
+            key: 'Total',
+            sortable: true
+          },
           {
             key: 'Recovered',
             variant: 'success'

@@ -1,7 +1,10 @@
 Vue.component('layout', httpVueLoader('vue/layout.vue'));
 
 const routes = [
-  { path: '/', component: httpVueLoader('vue/reported.vue') }
+  {
+    path: '/',
+    component: httpVueLoader('vue/reported.vue')
+  }
 ]
 
 const router = new VueRouter({
