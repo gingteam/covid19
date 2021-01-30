@@ -9,11 +9,8 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <b-container class="mt-2">
+    <b-container class="mt-2 mb-2">
       <router-view></router-view>
     </b-container>
   </div>
 </template>
-<script>
-  module.exports = {}
-</script>

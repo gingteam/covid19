@@ -3,6 +3,8 @@ Cập nhập tình hình covid19
 
 ![Made with love in Vietnam](https://madewithlove.now.sh/vn?heart=true)
 
+[![https://imgur.com/3vGbRTm.png](https://imgur.com/3vGbRTm.png)](https://imgur.com/3vGbRTm.png)
+
 # Usage
 
 ```sh
