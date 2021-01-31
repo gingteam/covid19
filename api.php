@@ -14,7 +14,9 @@ foreach ($curl->response->data as $data) {
     $response['vn'][] = [
         'name'      => $data->name,
         'address'   => $data->address,
-        'group'     => $data->patientGroup
+        'group'     => $data->patientGroup,
+        'lat'       => $data->lat,
+        'lng'       => $data->lng,
     ];
 }
 
@@ -25,10 +27,10 @@ $curl->get('https://api.covid19api.com/summary');
 
 foreach ($curl->response->Countries as $data) {
 	$response['global'][] = [
-	  	'Country'   => $data->Country,
-	  	'Total'     => $data->TotalConfirmed,
-	  	'Recovered' => $data->TotalRecovered,
-	  	'Deaths'    => $data->TotalDeaths,
+	  	'country'   => $data->Country,
+	  	'total'     => $data->TotalConfirmed,
+	  	'recovered' => $data->TotalRecovered,
+	  	'deaths'    => $data->TotalDeaths,
 	];
 }
 

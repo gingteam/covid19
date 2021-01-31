@@ -2,6 +2,7 @@
   <div>
     <b-overlay :show="cases.length == 0" rounded="sm">
       <b-card title="Covid-19 Report">
+        <div id="vnmap"></div>
         <b-table
           id="cases"
           :items="cases"
@@ -10,6 +11,7 @@
           bordered
           small
           responsive
+          class="mt-2"
         ></b-table>
         <b-pagination
           v-model="currentPage"
@@ -50,22 +52,23 @@
         items: [],
         fields: [
           {
-            key: 'Country',
+            key: 'country',
             sortable: true
           },
           {
-            key: 'Total',
+            key: 'total',
             sortable: true
           },
           {
-            key: 'Recovered',
+            key: 'recovered',
             variant: 'success'
           },
           {
-            key: 'Deaths',
+            key: 'deaths',
             variant: 'danger'
           }
-        ]
+        ],
+        map: null,
       }
     },
     mounted () {
@@ -74,7 +77,21 @@
         .then(response => {
           this.items = response.data.global
           this.cases = response.data.vn
+          this.map = L.map('vnmap').setView([16.4619, 107.59546], 5)
+          L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: 'GingTeam'
+          }).addTo(this.map)
+          this.cases.forEach(data =>
+            L.marker([data.lat, data.lng])
+              .bindPopup(`${data.name} - ${data.address}`)
+              .addTo(this.map)
+          )
         })
+    },
+    beforeDestroy() {
+      if (this.map) {
+        this.map.remove()
+      }
     },
     computed: {
       rows() {
@@ -86,3 +103,10 @@
     }
   }
 </script>
+
+<style>
+  #vnmap {
+    width: 100%;
+    height: 400px;
+  }
+</style>

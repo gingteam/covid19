@@ -6,8 +6,10 @@
     <meta name="description" content="corona, covid19">
     <meta name="author" content="Gingdev">
     <title>Covid-19 Reported</title>
+    <link rel="icon" href="favicon.ico"/>
     <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
   </head>
   <body>
     <div id="app"></div>
@@ -17,5 +19,6 @@
   <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
   <script src="//unpkg.com/vue-router@latest/dist/vue-router.js"></script>
   <script src="//unpkg.com/axios@latest/dist/axios.min.js"></script>
+  <script src="//unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script src="app.js?v=<?=filemtime('app.js');?>"></script>
 </html>
