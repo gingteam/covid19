@@ -71,7 +71,7 @@
         map: null,
       }
     },
-    mounted () {
+    beforeMount () {
       axios
         .get('/api.php')
         .then(response => {
